@@ -1,10 +1,12 @@
 class HighScoresController < ApplicationController
   before_action :set_high_score, only: [:show, :edit, :update, :destroy]
 
+  include Testlib
+
   # GET /high_scores
   # GET /high_scores.json
   def index
-    @test = "Hello Worl"
+    @test = "Hello World" + test_method
     @high_scores = HighScore.all
   end
 
